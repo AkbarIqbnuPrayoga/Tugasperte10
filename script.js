@@ -1,3 +1,27 @@
+// Fungsi untuk mengontrol tampilan kartu berdasarkan halaman
+function changePage(pageNumber) {
+    const cards = document.querySelectorAll('.fashion-card');
+    const cardsPerPage = 3;
+    const startIndex = (pageNumber - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+
+    // Tampilkan atau sembunyikan kartu berdasarkan halaman aktif
+    cards.forEach((card, index) => {
+        if (index >= startIndex && index < endIndex) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Set halaman awal ke 1
+document.addEventListener('DOMContentLoaded', () => {
+    changePage(1);
+});
+
+
+
 function showThankYouModal() {
     // Cek jika form valid sebelum menampilkan pop up
     const form = document.getElementById('subscriptionForm');
@@ -34,42 +58,5 @@ fadeUps.forEach(element => {
     observer.observe(element);
 });
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    const cards = document.querySelectorAll(".fashion-card");
-    const cardsPerPage = 3;
-    let currentPage = 1;
-
-    function showPage(page) {
-        currentPage = page;
-        const start = (page - 1) * cardsPerPage;
-        const end = start + cardsPerPage;
-
-        cards.forEach((card, index) => {
-        card.style.display = index >= start && index < end ? "block" : "none";
-        });
-
-        document.getElementById("prevPage").classList.toggle("disabled", page === 1);
-        document.getElementById("nextPage").classList.toggle("disabled", page === Math.ceil(cards.length / cardsPerPage));
-    }
-    document.getElementById("prevPage").addEventListener("click", function(e) {
-        e.preventDefault();
-        if (currentPage > 1) showPage(currentPage - 1);
-    });
-    document.getElementById("nextPage").addEventListener("click", function(e) {
-        e.preventDefault();
-        if (currentPage < Math.ceil(cards.length / cardsPerPage)) showPage(currentPage + 1);
-    });
-    document.getElementById("page1").addEventListener("click", function(e) {
-        e.preventDefault();
-        showPage(1);
-    });
-    document.getElementById("page2").addEventListener("click", function(e) {
-        e.preventDefault();
-        showPage(2);
-    });
-    // Initialize first page
-    showPage(1);
-    });
 
 

@@ -308,26 +308,31 @@
         </div>
     </section>
 
-    <!-- Lifestyle in Fashion -->
     <section id="fashion" class="container mt-5">
         <h3 class="text-center" style="font-family: cursive;" id="LifestyleFashion">Lifestyle in Fashion</h3>
-        <h3 class="text-center fs-6" style="font-family: cursive;">Get inspired with the latest styles and timeless looks for every season.  </h3>
+        <h3 class="text-center fs-6" style="font-family: cursive;">
+            Get inspired with the latest styles and timeless looks for every season.
+        </h3>
         <div class="row" id="fashionCards">
 
-        <!-- Pagination -->
-        <nav aria-label="Fashion pagination">
-            <ul class="pagination justify-content-center mt-4">
-            <li class="page-item disabled" id="prevPage">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#" id="page1">1</a></li>
-            <li class="page-item"><a class="page-link" href="#" id="page2">2</a></li>
-            <li class="page-item" id="nextPage">
-                <a class="page-link" href="#">Next</a>
-            </li>
-            </ul>
-        </nav>
-
+            <!-- Pagination -->
+            <nav aria-label="Fashion pagination">
+                <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item" id="prevPage">
+                        <a class="page-link" onclick="changePage(1)">Previous</a>
+                    </li>
+                    <li class="page-item" id="prevPage">
+                        <a class="page-link" onclick="changePage(1)">1</a>
+                    </li>
+                    <li class="page-item" id="nextPage">
+                        <a class="page-link" onclick="changePage(2)">2</a>
+                    </li>
+                    <li class="page-item" id="prevPage">
+                        <a class="page-link" onclick="changePage(2)">Next</a>
+                    </li>
+                </ul>
+            </nav>
+    
         <!-- Card -->
         <div class="col-md-4 mb-4 fashion-card">
             <div class="card">
